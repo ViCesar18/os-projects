@@ -1,2 +1,2 @@
 # sistemas-operacionais
-Programas desenvolvidos para disciplina Sistemas Operacionais
+Programas desenvolvidos para disciplina Sistemas Operacionais.
