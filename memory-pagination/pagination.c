@@ -66,6 +66,10 @@ int main() {
 	scanf("%d", &tamanho_processo);			//Tamanho do Processo
 
 	numero_paginas_do_processo = tamanho_processo / tamanho_pagina;
+	if(tamanho_processo % tamanho_pagina != 0) {
+		numero_paginas_do_processo++;
+	}
+
 	espaco_endereco_virtual = pow(2, bits_endereco_virtual);
 	numero_quadros = espaco_endereco_virtual / tamanho_pagina;
 
@@ -134,8 +138,8 @@ int main() {
 
 		int j;
 		int k = 0;
-		printf("Paginacao: ");
-		for(j = bits_endereco_virtual - 1; j >= bits_endereco_virtual - n_bits_P; j--) {	//Printa a parte P do binário do endereço virtual
+		printf("Paginacao: %d %d %d\n", bits_endereco_virtual, n_bits_P, n_bits_D);
+		for(j = bits_endereco_virtual - 1; j >= bits_endereco_virtual - n_bits_D - 1; j--) {	//Printa a parte P do binário do endereço virtual
 			printf("%d", endereco_virtual_binario[j]);
 
 			if(endereco_virtual_binario[j] == 1) {
