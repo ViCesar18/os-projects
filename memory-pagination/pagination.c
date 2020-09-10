@@ -138,7 +138,7 @@ int main() {
 
 		int j;
 		int k = 0;
-		printf("Paginacao: %d %d %d\n", bits_endereco_virtual, n_bits_P, n_bits_D);
+		printf("Paginacao: ");
 		for(j = bits_endereco_virtual - 1; j >= bits_endereco_virtual - n_bits_D - 1; j--) {	//Printa a parte P do binário do endereço virtual
 			printf("%d", endereco_virtual_binario[j]);
 
@@ -166,6 +166,10 @@ int main() {
 		endereco_fisico_binario[k] = endereco_virtual_binario[k];
 		k++;
 
+		for(int q = 0; q < bits_endereco_virtual; q++) {
+			endereco_virtual_binario[q] = 0;
+		}
+		printf("p2: %d %d\n", p1, p2);
 		if(p2 == 0) {		//Passando o P do endereço fisico para o binário do endereço fisico completo (de trás pra frente)
 			for(i = k; i < bits_endereco_virtual; i++) {
 				endereco_fisico_binario[i] = 0;
